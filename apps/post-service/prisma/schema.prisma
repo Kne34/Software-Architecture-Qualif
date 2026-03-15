@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+  importFileExtension = "ts"
+  generatedFileExtension = "ts"
+  moduleFormat = "cjs"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+model Post {
+  id      Int @id @default(autoincrement())
+  title   String
+  content String
+  user_id Int
+}
